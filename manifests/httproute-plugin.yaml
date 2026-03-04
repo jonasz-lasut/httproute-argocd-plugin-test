@@ -94,3 +94,18 @@ spec:
         - path:
             type: PathPrefix
             value: /
+---
+apiVersion: waf.baloise.app/v1alpha1
+kind: WAFRoute
+metadata:
+  name: httpbin
+  namespace: httpbin
+spec:
+  hostnames:
+    - hostname: public-example.172.18.0.3.nip.io
+  rules:
+    - entry:
+        paths:
+          - path: "/"
+        origins:
+          - origin: example.172.18.0.3.nip.io
