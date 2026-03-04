@@ -103,6 +103,10 @@ metadata:
 spec:
   hostnames:
     - hostname: public-example.172.18.0.3.nip.io
+  metadata:
+    serviceCode: httpbin
+    applicationName: httpbin
+    stage: test
   rules:
     - entry:
         paths:
