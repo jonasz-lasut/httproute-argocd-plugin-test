@@ -79,7 +79,7 @@ spec:
   parentRefs:
   - name: http
   hostnames:
-  - "example.com"
+  - "example.127.0.0.1.nip.io"
   rules:
   - backendRefs:
     - name: httpbin
