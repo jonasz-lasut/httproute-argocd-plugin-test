@@ -82,6 +82,7 @@ spec:
     - group: gateway.networking.k8s.io
       kind: Gateway
       name: http
+      namespace: kgateway-system
   rules:
     - backendRefs:
         - group: ''
