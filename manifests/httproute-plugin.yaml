@@ -76,11 +76,20 @@ metadata:
   name: httpbin
   namespace: httpbin
 spec:
-  parentRefs:
-  - name: http
   hostnames:
-  - "example.172.18.0.3.nip.io"
+    - example.172.18.0.3.nip.io
+  parentRefs:
+    - group: gateway.networking.k8s.io
+      kind: Gateway
+      name: http
   rules:
-  - backendRefs:
-    - name: httpbin
-      port: 8080
+    - backendRefs:
+        - group: ''
+          kind: Service
+          name: httpbin
+          port: 8080
+          weight: 1
+      matches:
+        - path:
+            type: PathPrefix
+            value: /
